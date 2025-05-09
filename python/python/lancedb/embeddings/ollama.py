@@ -33,9 +33,9 @@ class OllamaEmbeddings(TextEmbeddingFunction):
 
     def _compute_embedding(self, text) -> Union["np.array", None]:
         return (
-            self._ollama_client.embeddings(
+            self._ollama_client.embed(
                 model=self.name,
-                prompt=text,
+                input=text,
                 options=self.options,
                 keep_alive=self.keep_alive,
             )["embedding"]
