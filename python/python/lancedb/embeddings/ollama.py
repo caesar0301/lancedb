@@ -38,7 +38,7 @@ class OllamaEmbeddings(TextEmbeddingFunction):
                 input=text,
                 options=self.options,
                 keep_alive=self.keep_alive,
-            )["embedding"]
+            )["embeddings"]
             or None
         )
 
